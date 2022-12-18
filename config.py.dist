@@ -1,0 +1,14 @@
+mqtt_server = 'mqtt.bitlair.nl'
+mqtt_port = 1883
+
+spacestate_topic = 'bitlair/state/bitlair'
+open_string = 'open'
+closed_string = 'closed'
+
+spacestate_profile_key = 'Spacestate'
+open_profile_field = 'Open! @ {}'
+closed_profile_field = 'Closed @ {}'
+
+profile_fields = [('Website', 'https://bitlair.nl/')]
+access_token = 'aaaaAAAAaaaa1234'
+homeserver = 'https://hsnl.social'
