@@ -6,11 +6,16 @@ import datetime
 from mastodon import Mastodon
 
 def set_profile_fields(profile_open_text_value):
-    profile_fields = config.profile_fields
-    profile_fields.append((config.spacestate_profile_key, profile_open_text_value))
-    mastodon.account_update_credentials(fields=profile_fields)
-    # don't be alarmed by the method name, this is just for updating profile metadata
+    profile_fields = [
+        *config.profile_fields,
+        (config.spacestate_profile_key, profile_open_text_value),
+        # Fill empty field slots with empty strings. Without these, Mastodon seems to interpret the
+        # field update as an append operation.
+        *([('', '')] * (3-len(config.profile_fields))),
+    ]
     print(profile_fields)
+    # don't be alarmed by the method name, this is just for updating profile metadata
+    mastodon.account_update_credentials(fields=profile_fields)
 
 def on_connect(client, userdata, flags, rc):
     if rc != 0:
