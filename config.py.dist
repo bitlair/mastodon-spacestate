@@ -9,10 +9,6 @@ spacestate_profile_key = 'Spacestate'
 open_profile_field = 'Open! @ {}'
 closed_profile_field = 'Closed @ {}'
 
-update_profilepic_on_spacestate_change = True
-spacestate_open_profilepic = './open.png'
-spacestate_closed_profilepic = './closed.png'
-
 profile_fields = [('Website', 'https://bitlair.nl/')]
 access_token = 'aaaaAAAAaaaa1234'
 homeserver = 'https://hsnl.social'
